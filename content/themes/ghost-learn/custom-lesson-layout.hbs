@@ -1,0 +1,63 @@
+{{!< default}} 
+{{#post}}
+{{> hero-section lesson_style="two"}}
+<section class="single-area pb-20">
+   <div class="container mx-auto">
+      <div class="grid lg:grid-cols-12 gap-8">
+         <div class="lg:col-span-4">
+                   <div class="sidebar rounded-lg sticky top-32 shadow hover:shadow-lg duration-300">
+               <div class="left-lesson-list">
+                  <div class="other-lessons"></div>
+                  <script>
+                     const getOtherLessonPosts = (site_url, api_key, primaryTag) => { 
+                         fetch(`${site_url}/ghost/api/content/posts/?key=${api_key}&filter=tag:[:hash-lesson,${primaryTag}]&order=published_at%20desc&limit=all&include=authors,tags`)
+                             .then(response => response.json())
+                             .then(data => {
+                                 let posts = data.posts;
+                                 if (posts && posts.length > 0) { // added check for posts variable
+                                    let template = posts.slice(1).map(post => `  <a href="${post.url}">  <div class="lesson-box mb-2  hover:shadow-lg  duration-300 py-4 px-4 flex justify-between items-center group {{post_class}}"
+                     id="id-{{id}}">
+                     <div class="lesson-logo flex-none  bg-blue-50  p-3 rounded-full w-10 h-10 inline-flex items-center justify-center mr-4 mt-1">
+                     
+                     {{> icons/lesson-alt}}
+                     
+                     </div>
+                     <div class="lesson-content flex-auto">
+                     <h4 class="font-serif text-lg text-gray-800 hover:text-blue-800 font-medium mb-0 duration-300">
+                     ${post.title}
+                     </h4>
+                     </div>
+                     </div> </a> `).join('');
+                     
+                                     document.querySelector('.other-lessons').innerHTML = `${template}`;
+                                 }
+                             })
+                             .catch(error => {
+                                 console.error("An error occurred:", error);
+                             });
+                     }
+                     
+                     
+                     if ("{{@custom.content_api_key}}") {
+                         const primaryTag = "{{#tags.[0]}}{{slug}}{{/tags.[0]}}";    
+                         getOtherLessonPosts("{{@site.url}}", "{{@custom.content_api_key}}", primaryTag);
+                     }
+                     
+                  </script>
+               </div>
+            </div>
+         </div>
+         <div class="lg:col-span-8">
+            <div class="gh-content pb-12">
+               {{content}}
+            </div>
+            <div class="w-full">
+               {{#if comments}}
+               {{comments}}
+               {{/if}}
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+{{/post}}
