@@ -41,7 +41,7 @@ jobs:
         run: sleep 3s  
 
       - name: Run HTTrack
-        run: httrack --mirror http://localhost:2368/ -v
+        run: httrack --mirror localhost:2368 -v
         
       - name: Set up Git
         run: |
