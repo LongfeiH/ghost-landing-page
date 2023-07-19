@@ -37,8 +37,11 @@ jobs:
       - name: yarn run dev
         run: yarn run dev &
 
-      - name: Wait for yarn run dev to start
-        run: sleep 3s  
+      - name: Wait for Ghost server to start
+        run: |
+          while ! curl --output /dev/null --silent --fail http://localhost:2368; do
+            sleep 2
+          done  
 
       - name: Run HTTrack
         run: httrack --mirror localhost:2368 -v
