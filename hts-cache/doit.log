@@ -1,5 +1,5 @@
 -w http://localhost:2368/ -v
-File generated automatically on Wed, 19 Jul 2023 14:28:16, do NOT edit
+File generated automatically on Wed, 19 Jul 2023 14:40:16, do NOT edit
 
 To update a mirror, just launch httrack without any parameters
 The existing cache will be used (and modified)
