@@ -46,7 +46,7 @@ jobs:
           done  
 
       - name: Run HTTrack
-        run: httrack --mirror http://localhost:2368 -v
+        run: httrack --mirror --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" http://localhost:2368 -v
         
       - name: Set up Git
         run: |
