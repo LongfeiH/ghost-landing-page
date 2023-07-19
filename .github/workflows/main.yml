@@ -35,7 +35,9 @@ jobs:
         run: sudo apt-get install httrack
         
       - name: yarn run dev
-        run: nohup yarn run dev &
+        run: yarn run dev &
+             sleep 3s
+             httrack --mirror http://localhost:2368 -v
 
       - name: Wait for Ghost server to start
         run: |
