@@ -30,9 +30,6 @@ jobs:
         
       - name: Install dependencies
         run: yarn install  
-
-      - name: Install HTTrack
-        run: sudo apt-get install httrack
         
       - name: Start dev server
         run: |
@@ -45,8 +42,8 @@ jobs:
             sleep 2
           done  
 
-      - name: Run HTTrack
-        run: httrack --mirror --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" http://localhost:2368 -v
+      - name: Run wget
+        run: wget --mirror http://localhost:2368 -v
         
       - name: Set up Git
         run: |
