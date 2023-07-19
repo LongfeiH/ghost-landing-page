@@ -24,17 +24,17 @@ jobs:
         run: yarn install
 
       - name: Install HTTrack
-        run: sudo apt-get update && sudo apt-get install httrack -y
+        run: sudo apt-get update && sudo apt-get install webhttrack -y
 
       - name: Run yarn run dev
         run: yarn run dev &
 
       - name: Wait for yarn run dev to start
-        run: sleep 10s
+        run: sleep 5s
 
       - name: Run HTTrack
         run: |
-          httrack --mirror http://localhost:2368 -O ./gh-pages
+          httrack --mirror http://localhost:2368 -O .
           export HTTRACK_EXIT_CODE=$?
           if [[ $HTTRACK_EXIT_CODE -eq 0 ]]; then
             echo "HTTrack completed successfully"
