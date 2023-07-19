@@ -20,21 +20,12 @@ jobs:
         with:
           node-version: 18.12.1
 
-      - name: Install dependencies
-        run: yarn install
-
       - name: Install HTTrack
-        run: sudo apt-get update && sudo apt-get install webhttrack -y
-
-      - name: Run yarn run dev
-        run: yarn run dev &
-
-      - name: Wait for yarn run dev to start
-        run: sleep 5s
+        run: sudo apt-get update && sudo apt-get install httrack -y
 
       - name: Run HTTrack
         run: |
-          webhttrack --mirror http://localhost:2368 -O .
+          httrack --mirror https://www.baidu.com/ -O .
           export HTTRACK_EXIT_CODE=$?
           if [[ $HTTRACK_EXIT_CODE -eq 0 ]]; then
             echo "HTTrack completed successfully"
