@@ -10,10 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout main branch
         uses: actions/checkout@v2
         with:
-          red: main
+          ref: main
+
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v2
+        with:
           ref: gh-pages
 
       - name: Set up Node.js
