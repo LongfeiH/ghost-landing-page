@@ -43,7 +43,7 @@ jobs:
           done  
 
       - name: Run wget
-        run: wget --mirror http://localhost:2368 -v
+        run: wget --no-clobber --spider --mirror http://localhost:2368 -v
         
       - name: Set up Git
         run: |
