@@ -19,12 +19,21 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 18.12.1
+        
+      - name: Install dependencies
+        run: yarn install  
 
       - name: Install HTTrack
         run: sudo apt-get install httrack
+        
+      - name: Run yarn run dev
+        run: yarn run dev &
+
+      - name: Wait for yarn run dev to start
+        run: sleep 3s  
 
       - name: Run HTTrack
-        run: httrack --mirror https://www.baidu.com -v
+        run: httrack --mirror http://localhost:2368 -v
         
       - name: Set up Git
         run: |
@@ -37,3 +46,7 @@ jobs:
           git add -A
           git commit -m "Update gh-pages branch"
           git push origin gh-pages
+          
+      - name: End process
+        run: |
+          kill $(pgrep -f "yarn run dev")   
