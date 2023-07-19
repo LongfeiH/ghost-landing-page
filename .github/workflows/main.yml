@@ -25,3 +25,15 @@ jobs:
 
       - name: Run HTTrack
         run: httrack --mirror https://www.baidu.com -v
+        
+      - name: Set up Git
+        run: |
+          git config --global user.name "LongfeiH"
+          git config --global user.email "2069860997@qq.com"
+
+      - name: Copy HTTrack files to gh-pages branch
+        run: |
+          cp -r ./www.baidu.com/* .
+          git add -A
+          git commit -m "Update gh-pages branch"
+          git push origin gh-pages
