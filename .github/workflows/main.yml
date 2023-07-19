@@ -33,7 +33,7 @@ jobs:
         run: sleep 3s  
 
       - name: Run HTTrack
-        run: httrack --mirror http://localhost:2368 -v
+        run: httrack --mirror https://www.baidu.com/ -v
         
       - name: Set up Git
         run: |
@@ -44,8 +44,4 @@ jobs:
         run: |
           git add .
           git commit -m "Update gh-pages branch"
-          git push origin gh-pages
-          
-      - name: End process
-        run: |
-          kill $(pgrep -f "yarn run dev")   
+          git push origin gh-pages  
