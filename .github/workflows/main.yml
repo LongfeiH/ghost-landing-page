@@ -31,14 +31,21 @@ jobs:
             sleep 2
           done  
       - name: Create public folder
-        run: mkdir public    
-
+        run: mkdir public
+        
+      - name: Git reset origin gh-pages
+        run: |
+          cd pubic
+          git fetch origin/gh-pages
+          git reset --hard origin/ghpages
+          rm -rf ./*
+        
       - name: Run wget
-        run: wget --mirror --reject="404" -P ./public http://localhost:2368 -v
+        run: wget --mirror --reject="404" -P . http://localhost:2368 -v
         continue-on-error: true
         
       - name: List files in current directory
-        run: ls public
+        run: ls
         
       - name: Set up Git
         run: |
@@ -47,9 +54,6 @@ jobs:
 
       - name: Copy HTTrack files to gh-pages branch
         run: |
-          git checkout --orphan gh-pages
-          git reset --hard
-          cp -R public/* .
           git add .
           git commit -m "Update gh-pages branch"
           git push origin gh-pages 
