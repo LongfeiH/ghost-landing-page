@@ -25,7 +25,7 @@ jobs:
 
       - name: Run HTTrack
         run: |
-          httrack --mirror https://www.baidu.com/ -O .
+          httrack --mirror https://www.baidu.com/
           export HTTRACK_EXIT_CODE=$?
           if [[ $HTTRACK_EXIT_CODE -eq 0 ]]; then
             echo "HTTrack completed successfully"
