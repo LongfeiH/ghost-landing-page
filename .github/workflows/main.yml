@@ -24,4 +24,4 @@ jobs:
         run: sudo apt-get install httrack
 
       - name: Run HTTrack
-        run: httrack --mirror https://www.baidu.com
+        run: httrack --mirror https://www.baidu.com -v
