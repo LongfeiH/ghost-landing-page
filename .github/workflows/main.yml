@@ -40,9 +40,8 @@ jobs:
           while ! curl --output /dev/null --silent --fail http://localhost:2368; do
             sleep 2
           done  
-      - name: Clear folder
-        run: |
-          rm -rf ./public/*    
+      - name: Create public folder
+        run: mkdir public    
 
       - name: Run wget
         run: wget --mirror --reject="404" -P ./public http://localhost:2368 -v
@@ -58,6 +57,9 @@ jobs:
 
       - name: Copy HTTrack files to gh-pages branch
         run: |
+          git checkout --orphan gh-pages
+          git reset --hard
+          cp -R public/* .
           git add .
           git commit -m "Update gh-pages branch"
-          git push origin gh-pages  
+          git push origin gh-pages 
