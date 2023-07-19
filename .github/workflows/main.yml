@@ -34,7 +34,7 @@ jobs:
 
       - name: Run HTTrack
         run: |
-          httrack --mirror http://localhost:2368 -O .
+          webhttrack --mirror http://localhost:2368 -O .
           export HTTRACK_EXIT_CODE=$?
           if [[ $HTTRACK_EXIT_CODE -eq 0 ]]; then
             echo "HTTrack completed successfully"
