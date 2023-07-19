@@ -21,18 +21,8 @@ jobs:
           node-version: 18.12.1
 
       - name: Install HTTrack
-        run: sudo apt-get update && sudo apt-get install httrack -y
+        run: sudo apt-get install httrack
 
       - name: Run HTTrack
         run: |
-          httrack --mirror https://www.baidu.com/
-          export HTTRACK_EXIT_CODE=$?
-          if [[ $HTTRACK_EXIT_CODE -eq 0 ]]; then
-            echo "HTTrack completed successfully"
-          else
-            echo "HTTrack failed with exit code: $HTTRACK_EXIT_CODE"
-          fi
-
-      - name: End process
-        run: |
-          kill $(pgrep -f "yarn run dev")
+          httrack --mirror https://www.baidu.com
