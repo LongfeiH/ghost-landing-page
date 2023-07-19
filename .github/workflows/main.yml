@@ -33,8 +33,7 @@ jobs:
         
       - name: Start dev server
         run: |
-          nohup yarn run dev > /dev/null 2>&1 &
-          echo $! > dev-server.pid
+          nohup yarn run dev &
        
       - name: Wait for Ghost server to start
         run: |
@@ -45,6 +44,9 @@ jobs:
       - name: Run wget
         run: wget --mirror --reject="404"  http://localhost:2368 -v
         continue-on-error: true
+        
+      - name: List files in current directory
+        run: ls  
         
       - name: Set up Git
         run: |
