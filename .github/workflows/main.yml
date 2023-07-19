@@ -42,7 +42,7 @@ jobs:
 
       - name: Copy HTTrack files to gh-pages branch
         run: |
-          cp -r ./localhost_2368/* .
+          cp -r ./* .
           git add -A
           git commit -m "Update gh-pages branch"
           git push origin gh-pages
