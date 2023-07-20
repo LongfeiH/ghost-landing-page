@@ -29,16 +29,20 @@ jobs:
         run: |
           while ! curl --output /dev/null --silent --fail http://localhost:2368; do
             sleep 2
-          done  
+          done
+      
+      - name: Install HTTrack
+        run: sudo apt install httrack
+        
       - name: Create public folder
         run: mkdir public
         
-      - name: Run wget
-        run: wget --mirror -P ./public http://localhost:2368 -v
+      - name: Mirror website using HTTrack
+        run: httrack http://localhost:2368 -v
         continue-on-error: true
         
       - name: List files in current directory
-        run: ls public
+        run: ls
         
       - name: Set up Git
         run: |
@@ -47,10 +51,6 @@ jobs:
 
       - name: Copy HTTrack files to gh-pages branch
         run: |
-          git checkout --orphan gh-pages
-          git reset --hard
-          cp -R public/* .
-          git pull origin gh-pages
           git add .
           git commit -m "Update gh-pages branch"
           git push origin gh-pages
