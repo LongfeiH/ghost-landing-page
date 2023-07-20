@@ -34,7 +34,7 @@ jobs:
         run: mkdir public
         
       - name: Run wget
-        run: wget --no-clobber --spider -P ./public http://localhost:2368 -v
+        run: wget --mirror -P ./public http://localhost:2368 -v
         continue-on-error: true
         
       - name: List files in current directory
