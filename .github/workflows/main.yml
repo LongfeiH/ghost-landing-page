@@ -42,7 +42,7 @@ jobs:
         continue-on-error: true
         
       - name: List files in current directory
-        run: ls
+        run: ls ./localhost_2368/
         
       - name: Set up Git
         run: |
