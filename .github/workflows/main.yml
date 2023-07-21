@@ -55,7 +55,7 @@ jobs:
         run: gssg
         
       - name: List files in current directory
-        run: ls 
+        run: ls static
 
       - name: Push new branch to remote
         run: |
