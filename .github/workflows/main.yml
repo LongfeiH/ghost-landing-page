@@ -28,17 +28,23 @@ jobs:
       - name: Wait for Ghost server to start
         run: |
           while ! curl --output /dev/null --silent --fail http://localhost:2368; do
-            sleep 2
+            sleep 1
           done
       
       - name: Install gssg
         run: npm install -g ghost-static-site-generator
         
+      - name: Reset
+        run: git reset --hard origin/test
+      
+      - name: List files in current directory
+        run: ls
+        
       - name: Generate static site
         run: gssg
         
       - name: List files in current directory
-        run: ls
+        run: ls ./static
         
       - name: Set up Git
         run: |
@@ -49,4 +55,4 @@ jobs:
         run: |
           git add ./static/*
           git commit -m "Update branch"
-          git push origin test
+          git push origin test --force
