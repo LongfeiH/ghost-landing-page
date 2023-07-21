@@ -43,7 +43,7 @@ jobs:
         run: |
           git fetch origin test
           git reset origin/test
-          git merge origin/test --allow-unrelated-histories
+          git merge origin/test
           git branch -a
       
       - name: List files in current directory
