@@ -42,6 +42,8 @@ jobs:
       - name: Create and switch to a new branch
         run: |
           git checkout --orphan new-test  # 创建一个全新的、不带任何文件的分支
+          git fetch origin test
+          git reset --hard origin/test
           git rm -rf .                     # 删除所有文件
           git clean -df                    # 删除未被版本控制的文件和目录
           git commit --allow-empty -m "Create new test branch"  # 提交空提交以保存分支
@@ -58,4 +60,4 @@ jobs:
       - name: Push new branch to remote
         run: |
           git remote set-url origin "https://github.com/LongfeiH/ghost-landing-page.git"  # 设置远程仓库地址
-          git push origin new-test:test  # 将新的分支推送到远程的 test 分支上
+          git push origin new-test:test --force  # 将新的分支推送到远程的 test 分支上
