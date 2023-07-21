@@ -47,6 +47,6 @@ jobs:
 
       - name: Copy HTTrack files to gh-pages branch
         run: |
-          git add .
+          git add ./static/*
           git commit -m "Update branch"
           git push origin test
