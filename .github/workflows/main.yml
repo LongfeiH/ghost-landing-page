@@ -37,7 +37,10 @@ jobs:
       - name: Reset
         run: |
           git fetch --all
-          git reset --hard origin/test
+          git checkout -B test origin/test  # 创建 test 分支并切换到该分支
+          git rm -r .                      # 删除 test 分支上的所有文件
+          git clean -df                    # 删除未被版本控制的文件和目录
+          git commit -m "Clean test branch" --allow-empty  # 提交空提交以保存删除的更改
       
       - name: List files in current directory
         run: ls
