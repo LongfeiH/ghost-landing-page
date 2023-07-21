@@ -38,16 +38,13 @@ jobs:
         run: |
           git config --global user.name "LongfeiH"
           git config --global user.email "2069860997@qq.com"
-          git stash --include-untracked  # 暂存所有修改，包括未被跟踪的文件
         
-      - name: Reset
+      - name: Create and switch to a new branch
         run: |
-          git fetch --all
-          git checkout -B test origin/test  # 创建 test 分支并切换到该分支
-          git rm -r .                      # 删除 test 分支上的所有文件
+          git checkout --orphan new-test  # 创建一个全新的、不带任何文件的分支
+          git rm -rf .                     # 删除所有文件
           git clean -df                    # 删除未被版本控制的文件和目录
-          git commit -m "Clean test branch" --allow-empty  # 提交空提交以保存删除的更改
-          git stash pop                    # 恢复之前暂存的修改
+          git commit --allow-empty -m "Create new test branch"  # 提交空提交以保存分支
       
       - name: List files in current directory
         run: ls
@@ -56,10 +53,9 @@ jobs:
         run: gssg
         
       - name: List files in current directory
-        run: ls ./static
+        run: ls 
 
-      - name: Copy HTTrack files to gh-pages branch
+      - name: Push new branch to remote
         run: |
-          git add ./static/*
-          git commit -m "Update branch"
-          git push origin test --force
+          git remote set-url origin "https://github.com/LongfeiH/ghost-landing-page.git"  # 设置远程仓库地址
+          git push origin new-test:test  # 将新的分支推送到远程的 test 分支上
