@@ -42,7 +42,7 @@ jobs:
       - name: Create and switch to a new branch
         run: |
           git fetch origin test
-          git merge origin/test
+          git merge origin/test --allow-unrelated-histories
       
       - name: List files in current directory
         run: ls
