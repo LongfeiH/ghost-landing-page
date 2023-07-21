@@ -31,18 +31,14 @@ jobs:
             sleep 2
           done
       
-      - name: Install HTTrack
-        run: sudo apt install httrack
+      - name: Install gssg
+        run: npm install -g ghost-static-site-generator
         
-      - name: Create public folder
-        run: mkdir public
-        
-      - name: Mirror website using HTTrack
-        run: httrack http://localhost:2368 -v
-        continue-on-error: true
+      - name: Generate static site
+        run: gssg
         
       - name: List files in current directory
-        run: ls ./localhost_2368/
+        run: ls
         
       - name: Set up Git
         run: |
@@ -51,6 +47,6 @@ jobs:
 
       - name: Copy HTTrack files to gh-pages branch
         run: |
-          git add ./localhost_2368/*
+          git add .
           git commit -m "Update branch"
           git push origin test
