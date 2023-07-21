@@ -43,6 +43,7 @@ jobs:
         run: |
           git fetch origin test
           git merge origin/test --allow-unrelated-histories
+          git branch -a
       
       - name: List files in current directory
         run: ls
@@ -58,4 +59,4 @@ jobs:
           git remote set-url origin "https://github.com/LongfeiH/ghost-landing-page.git"  # 设置远程仓库地址
           git add ./static/*
           git commit -m "add static site"
-          git push origin test --force  # 将新的分支推送到远程的 test 分支上
+          git push origin master:test --force  # 将新的分支推送到远程的 test 分支上
