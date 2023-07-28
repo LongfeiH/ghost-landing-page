@@ -1,3 +1,5 @@
+# Ghost Landing Page
+## Ghost
 &nbsp;
 <p align="center">
   <a href="https://ghost.org/#gh-light-mode-only" target="_blank">
@@ -29,9 +31,6 @@
         <img src="https://img.shields.io/github/contributors/TryGhost/Ghost.svg" alt="Contributors" />
     </a>
 </p>
-<p align="center">
-  Love open source? <a href="https://careers.ghost.org">We're hiring</a> JavaScript engineers to work on Ghost full-time.
-</p>
 
 &nbsp;
 
@@ -39,65 +38,69 @@
 
 &nbsp;
 
-<a href="https://ghost.org/pricing/#gh-light-mode-only" target="_blank"><img src="https://user-images.githubusercontent.com/65487235/157849437-9b8fcc48-1920-4b26-a1e8-5806db0e6bb9.png" alt="Ghost(Pro)" width="165px" /></a>
-<a href="https://ghost.org/pricing/#gh-dark-mode-only" target="_blank"><img src="https://user-images.githubusercontent.com/65487235/157849438-79889b04-b7b6-4ba7-8de6-4c1e4b4e16a5.png" alt="Ghost(Pro)" width="165px" /></a>
+Ghost is a popular open-source content management system (CMS) and blogging platform. Designed to be simple, elegant, and focused solely on publishing content, Ghost provides a user-friendly interface for writers and bloggers to create and manage their posts effortlessly.
 
-The easiest way to get a production instance deployed is with our official **[Ghost(Pro)](https://ghost.org/pricing/)** managed service. It takes about 2 minutes to launch a new site with worldwide CDN, backups, security and maintenance all done for you.
+This repository aims to leverage Ghost to swiftly and efficiently build a stunning landing-page website and deploy it using Amplify.
 
-For most people this ends up being the best value option because of [how much time it saves](https://ghost.org/docs/hosting/) — and 100% of revenue goes to the Ghost Foundation; funding the maintenance and further development of the project itself. So you’ll be supporting open source software *and* getting a great service!
-
-&nbsp;
-
-# Quickstart install
-
-If you want to run your own instance of Ghost, in most cases the best way is to use our **CLI tool**
-
-```
-npm install ghost-cli -g
-```
+If you want to know more about ghost, you can click the picture above or the ghost icon to jump to the ghost home page
 
 &nbsp;
 
-Then, if installing locally add the `local` flag to get up and running in under a minute - [Local install docs](https://ghost.org/docs/install/local/)
+## Amplify
+&nbsp;
 
-```
-ghost install local
-```
+Amplify is a cloud development platform that enables seamless and scalable deployment of web and mobile applications. 
+
+With Amplify, developers can quickly set up, manage, and automate the entire application deployment process, making it easier to focus on building and enhancing the core functionalities of their applications without worrying about server infrastructure.
+
+If you have an AWS account, you can click <a href="https://ap-southeast-1.console.aws.amazon.com/">here</a> to access the AWS console and explore Amplify in more detail.
+
+Amplify can deploy various types of websites, including static websites, single-page applications (SPAs), and serverless web applications. However, it cannot directly deploy Ghost, which is a dynamic content management system (CMS) and requires a server to run. 
+
+So we need a tool to generate static sites for ghost.
 
 &nbsp;
 
-or on a server run the full install, including automatic SSL setup using LetsEncrypt - [Production install docs](https://ghost.org/docs/install/ubuntu/)
+## Ghost Static Site Generator
+&nbsp;
 
-```
-ghost install
-```
+This is a static site generation tool specially designed for ghost and based on wget. It is very convenient to use. When your ghost project is running on the localhost:2368 endpoint, you only need to enter `gssg` in the terminal, and the corresponding static website file will be generated in the current folder
+
+If you want to know more about `gssg`, please click <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">here</a>.
+
 
 &nbsp;
 
-Check out our [official documentation](https://ghost.org/docs/) for more information about our [recommended hosting stack](https://ghost.org/docs/hosting/) & properly [upgrading Ghost](https://ghost.org/docs/update/), plus everything you need to develop your own Ghost [themes](https://ghost.org/docs/themes/) or work with [our API](https://ghost.org/docs/content-api/).
+## How to Contribute
 
-### Contributors & advanced developers
+1. First, clone the repository:
+    ```
+    git init
+    git clone git@github.com:ocademy-ai/ghost-landing-page.git
+    ```
+2. Install dependencies
+   ```
+   yarn install
+   ```
+   If you have not installed yarn, please install it first
+3. Start server
+   ```
+   yarn run dev
+   ```
+4. Make some changes   
+     
+   Open localhost:2368 and make some changes.
+5. Commit changes  
+     
+   Push commit or submit a pull request to synchronize your local changes to the main branch.
 
-For anyone wishing to contribute to Ghost or to hack/customize core files we recommend following our full development setup guides: [Contributor guide](https://ghost.org/docs/contributing/) • [Developer setup](https://ghost.org/docs/install/source/)
+**Note1:** You don't need to run gssg yourself to generate the static site, once the main branch has any commits, github actions will run gssg to generate the static site files according to the latest change records, and upload them all to the gh-pages branch. If you want to understand the whole process, please check the `.github/workflows/main.yml` file
 
-&nbsp;
+**Note2:** Do not make any changes to the gh-pages branch, it is a clean, static site file storage branch, and it is associated with amplify, any changes to the gh-pages branch will cause the site to be re-deployed.
 
-# Ghost sponsors
+## Verify changes
 
-We'd like to extend big thanks to our sponsors and partners who make Ghost possible. If you're interested in sponsoring Ghost and supporting the project, please check out our profile on [GitHub sponsors](https://github.com/sponsors/TryGhost) :heart:
+Finally, if you want to visit the deployed website to verify your changes, please click <a href="https://gh-pages.d2iqc9095blb4x.amplifyapp.com/">here</a>.
 
-**[DigitalOcean](https://m.do.co/c/9ff29836d717)** • **[Fastly](https://www.fastly.com/)**
-
-&nbsp;
-
-# Getting help
-
-You can find answers to a huge variety of questions, along with a large community of helpful developers over on the [Ghost forum](https://forum.ghost.org/) - replies are generally very quick. **Ghost(Pro)** customers also have access to 24/7 email support.
-
-To stay up to date with all the latest news and product updates, make sure you [subscribe to our blog](https://ghost.org/blog/) — or you can always follow us [on Twitter](https://twitter.com/Ghost), if you prefer your updates bite-sized and facetious. :saxophone::turtle:
-
-&nbsp;
-
-# Copyright & license
-
-Copyright (c) 2013-2023 Ghost Foundation - Released under the [MIT license](LICENSE). Ghost and the Ghost Logo are trademarks of Ghost Foundation Ltd. Please see our [trademark policy](https://ghost.org/trademark/) for info on acceptable usage.
+Username: ocademy2023
+Password: q7ZMwiZzQHjeH5X

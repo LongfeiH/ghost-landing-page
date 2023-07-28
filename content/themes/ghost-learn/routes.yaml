@@ -17,18 +17,14 @@ collections:
     template: blog
     filter: "tag:hash-blog"
     
+  /news/:
+    permalink: /news/{slug}/
+    template: news
+    filter: "tag:hash-news"
+
   /:
     permalink: /course/{slug}/
     template: index
-
-  /home-v2/:
-    permalink: /course/{slug}/
-    template: index-v2
-
-  /home-v3/:
-    permalink: /course/{slug}/
-    template: index-v3
-
 
 taxonomies:
   tag: /tag/{slug}/

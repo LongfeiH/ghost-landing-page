@@ -41,9 +41,9 @@ jobs:
         
       - name: Create and switch to a new branch
         run: |
-          git fetch origin test
-          git reset origin/test
-          git merge origin/test
+          git fetch origin gh-pages
+          git reset origin/gh-pages
+          git merge origin/gh-pages
           git branch -a
       
       - name: List files in current directory
@@ -59,4 +59,4 @@ jobs:
         run: |
           git add ./static/*
           git commit -m "add static site"
-          git push origin HEAD:test --force
+          git push origin HEAD:gh-pages --force

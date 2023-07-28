@@ -116,15 +116,11 @@
 
 			"featured_course_tag_1_heading": {
 				"type": "text",
-				"default": "UI/UX Design"
+				"default": "Python Programming"
 			},
 			"featured_course_tag_2_heading": {
 				"type": "text",
 				"default": "Web Development"
-			},
-			"contact_form_action_url": {
-				"type": "text",
-				"default": "https://submit-form.com/4HaTaFxz"
 			},
 			"back_to_scroll": {
 				"type": "boolean",

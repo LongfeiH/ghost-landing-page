@@ -5,7 +5,7 @@
       <div class=" bg-white shadow p-8 md:p-14 rounded-lg mb-8 lg:mb-12 relative z-10">
          <div class="newsletter-cta grid gap-6 grid-cols-1 lg:grid-cols-12 items-center border-b border-blue-100 pb-8 lg:pb-12 mb-8 lg:mb-16">
             <div class="lg:col-span-6 xl:col-span-8">
-               <h3 class="font-serif text-2xl lg:text-4xl text-gray-800 font-bold  mb-3"> {{t "Subscribe to Learn"}} 📫</h3>
+               <h3 class="font-serif text-2xl lg:text-4xl text-gray-800 font-bold  mb-3"> {{t "Subscribe to Ocademy"}} 📫</h3>
                <p class="text-base leading-relaxed text-gray-400 font-normal">               {{t "Subscribe to receive latest courses, news, and updates."}}</p>
             </div>
             <div class="lg:col-span-6 xl:col-span-4">
@@ -17,8 +17,8 @@
          </div>
       </div>
       <div
-         class="md:flex flex-row-reverse justify-between gap-6 items-center text-center lg:text-left pb-14 relative z-10">
-         <ul class="inline-flex items-center text-center lg:text-right gap-2">
+         class="md:flex justify-between gap-6 items-center text-center lg:text-left pb-14 relative z-10">
+         {{!-- <ul class="inline-flex items-center text-center lg:text-right gap-2">
             {{#if facebook_url }}
             <li><a class="group bg-blue-50 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center duration-300  border "
                href="{{facebook_url}}">
@@ -35,15 +35,15 @@
             {{/if}}
             <li><a class="group bg-blue-50 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center duration-300  border "
                href="https://instagram.com">
-               {{> icons/instagram}}
+               {{> icons/facebook}}
                </a>
             </li>
             <li><a class="group bg-blue-50 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center duration-300  border "
                href="https://linkedin.com">
-               {{> icons/linkedin}}
+               {{> icons/twitter}}
                </a>
             </li>
-         </ul>
+         </ul> --}}
          {{#if @custom.footer_note}}
          <div class="my-2">
             <p class="text-sm leading-relaxed text-gray-400 font-normal">
@@ -51,8 +51,7 @@
                <span id="spanYear">
                   <script> document.getElementById('spanYear').innerHTML = new Date('Y'); </script>
                </span>
-               {{@custom.footer_note}} | {{t "Developed by"}} <a class="text-gray-800 hover:text-blue-800 duration-300" rel="nofollow"
-                  href="https://www.themeix.com/">{{t "Themeix"}}</a> <br>  {{t "Published with"}} <a class="text-gray-800 hover:text-blue-800 duration-300" rel="nofollow" href="https://ghost.org?via=themeix75">Ghost</a>
+               {{@custom.footer_note}}
             </p>
          </div>
          {{/if}}

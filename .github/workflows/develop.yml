@@ -1,0 +1,62 @@
+name: Run yarn run dev on main branch
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2 
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.12.1
+        
+      - name: Install dependencies
+        run: yarn install  
+        
+      - name: Start dev server
+        run: |
+          nohup yarn run dev &
+       
+      - name: Wait for Ghost server to start
+        run: |
+          while ! curl --output /dev/null --silent --fail http://localhost:2368; do
+            sleep 1
+          done
+      
+      - name: Install gssg
+        run: npm install -g ghost-static-site-generator
+     
+      - name: Set up Git
+        run: |
+          git config --global user.name "LongfeiH"
+          git config --global user.email "2069860997@qq.com"
+        
+      - name: Create and switch to a new branch
+        run: |
+          git fetch origin develop-gh-pages
+          git reset origin/develop-gh-pages
+          git merge origin/develop-gh-pages
+          git branch -a
+      
+      - name: List files in current directory
+        run: ls
+        
+      - name: Generate static site
+        run: gssg
+        
+      - name: List files in current directory
+        run: ls
+
+      - name: Push new branch to remote
+        run: |
+          git add ./static/*
+          git commit -m "add static site"
+          git push origin HEAD:develop-gh-pages --force
