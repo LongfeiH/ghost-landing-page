@@ -82,7 +82,7 @@ If you want to know more about `gssg`, please click <a href="https://github.com/
    ```
    yarn install
    ```
-   If you have not installed yarn, please install it first
+   If you have not installed yarn, please install it first.
 3. Start server
    ```
    yarn run dev
