@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Blog</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="assets/images/favicon.ico" type="images/x-icon" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/assets/css/app.min.css?v=e87cb03414">
+      <style>
+   body{
+   --gray-400: #585F63;
+   }
+   .wavy-hover:hover:after {
+   box-shadow: 0 0 0 2px var(--ghost-accent-color), 0 0 0 4px #fafaff;
+   }
+   .bg-blue-800,
+   .bg-blue-700, .hover\:bg-blue-800:hover, .slick-dots .slick-active button, .simptip-success.simptip-position-right:after {
+   background-color: var(--ghost-accent-color);
+   }
+   .to-blue-800 {
+   --tw-gradient-to: var(--ghost-accent-color);
+   }
+   .from-blue-800, .via-blue-200{
+   --tw-gradient-form: var(--ghost-accent-color);
+   }
+   .via-blue-200 { 
+   --tw-gradient-stops: var(--tw-gradient-from), #74A9F3 ,var(--tw-gradient-to);
+   }
+   .from-blue-800 {
+   --tw-gradient-from: var(--ghost-accent-color)!important;
+   }
+   .bg-blue-100, .hover\:bg-blue-100:hover{
+   background-color: #e7e7ee;
+   }
+   .bg-blue-50, .hover\:bg-blue-50:hover{
+   background-color: #fafaff;
+   }
+   .border-blue-100, 
+   .border-blue-200{
+   border-color: #e7e7ee;
+   }
+   .hover\:text-blue-800:hover, .text-blue-800 {
+   color: var(--ghost-accent-color);
+   }
+   .border-blue-800,
+   .hover\:border-blue-800:hover {
+   border-color: var(--ghost-accent-color);
+   }
+   .simptip-success.simptip-position-right:before{
+   border-right-color: var(--ghost-accent-color);
+   }
+   .back-bottom-button svg path,
+   .slick-arrow svg path {
+   stroke: var(--ghost-accent-color);
+   }
+   .group:hover .group-hover\:text-blue-800,
+   .hover\:text-blue-500:hover {
+   color: var(--ghost-accent-color);
+   }
+   .simptip-danger.simptip-position-top:before {
+   border-top-color: var(--ghost-accent-color);
+   }
+   .simptip-danger.simptip-position-top:after {
+   background-color: var(--ghost-accent-color);
+   }
+</style>      <script src="/assets/js/jquery.min.js?v=e87cb03414"></script>
+      <link rel="icon" href="http://localhost:2368/content/images/2023/07/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:2368/blog/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Innovating AI Education">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog">
+    <meta property="og:description" content="Engage with Adaptive Project-Based Learning, Embrace Open Source, and Pioneer Your Future with AI-Guided Teaching and Learning.">
+    <meta property="og:url" content="http://localhost:2368/blog/">
+    <meta property="og:image" content="http://localhost:2368/content/images/2023/07/A-computer-from-the-90s-in-the-style-of-vaporwave.webp">
+    <meta property="article:published_time" content="2023-07-24T22:32:26.000Z">
+    <meta property="article:modified_time" content="2023-07-24T23:53:22.000Z">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog">
+    <meta name="twitter:description" content="Engage with Adaptive Project-Based Learning, Embrace Open Source, and Pioneer Your Future with AI-Guided Teaching and Learning.">
+    <meta name="twitter:url" content="http://localhost:2368/blog/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2023/07/A-computer-from-the-90s-in-the-style-of-vaporwave.webp">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="LongFei Huang">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Innovating AI Education",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2023/07/primary-logo-2.jpg"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "LongFei Huang",
+        "url": "http://localhost:2368/author/longfei/",
+        "sameAs": []
+    },
+    "headline": "Blog",
+    "url": "http://localhost:2368/blog/",
+    "datePublished": "2023-07-24T22:32:26.000Z",
+    "dateModified": "2023-07-24T23:53:22.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/2023/07/A-computer-from-the-90s-in-the-style-of-vaporwave.webp",
+        "width": 1024,
+        "height": 1024
+    },
+    "mainEntityOfPage": "http://localhost:2368/blog/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.54">
+    <link rel="alternate" type="application/rss+xml" title="Innovating AI Education" href="http://localhost:2368/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.33/umd/portal.min.js" data-i18n="false" data-ghost="http://localhost:2368/" data-key="01c60e27a5732fcfe90b9bdedd" data-api="http://localhost:2368/ghost/api/content/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="01c60e27a5732fcfe90b9bdedd" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="http://localhost:2368/" crossorigin="anonymous"></script>
+    
+    <link href="http://localhost:2368/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=e87cb03414"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=e87cb03414">
+    <script defer src="/public/comment-counts.min.js?v=e87cb03414" data-ghost-comments-counts-api="http://localhost:2368/members/api/comments/counts/"></script>
+    <script defer src="/public/member-attribution.min.js?v=e87cb03414"></script>
+     
+<style>
+      body{
+		position: relative;
+          overflow-x:hidden;
+      }
+ 
+   .tmx-button {
+      display: none;
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      padding: 12px 24px;
+      color: #fff;
+      background: var(--ghost-accent-color);
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      border-radius: 50px;
+    }
+       .tmx-button:hover{
+           color: #fff;    
+      }
+    
+    @media (min-width: 40em) {
+      .tmx-button { display: block; }
+    }
+    
+  </style>
+<style>:root {--ghost-accent-color: #1363df;}</style>
+   </head>
+   <body class="bg-white page-template page-blog overflow-x-hidden">
+      <div class="main-area ">
+         <header class="header-area top-0 left-0 right-0 py-4 lg:py-4 z-[250] bg-white max-h-24">
+   <div class="container mx-auto">
+      <div class="flex items-center relative">
+         <div class="header-logo flex-auto lg:flex-none"> <a class="pr-8 inline-block"
+            href="/">
+            <img  class="max-h-16" src="http://localhost:2368/content/images/2023/07/primary-logo-2.jpg" alt="">
+            </a> 
+         </div>
+         <div class="mobile-menu bg-white hidden lg:flex flex-1 items-center shadow-xl lg:shadow-none">
+            <ul class="navbar-nav lg:flex items-center">
+   <li><a class="text-base text-gray-800 hover:text-blue-800 font-medium block   px-5  py-2  lg:py-2" href="/about/">
+      About </a>
+   </li>
+   <li><a class="text-base text-gray-800 hover:text-blue-800 font-medium block   px-5  py-2  lg:py-2" href="/courses/">
+      Courses </a>
+   </li>
+   <li><a class="text-base text-gray-800 hover:text-blue-800 font-medium block   px-5  py-2  lg:py-2" href="/blog/">
+      Blog </a>
+   </li>
+   <li><a class="text-base text-gray-800 hover:text-blue-800 font-medium block   px-5  py-2  lg:py-2" href="/news/">
+      News </a>
+   </li>
+   <li><a class="text-base text-gray-800 hover:text-blue-800 font-medium block   px-5  py-2  lg:py-2" href="/contact/">
+      Contact </a>
+   </li>
+</ul>
+
+         </div>
+         <a class="popup-with-form flex lg:hidden items-center p-2"  href="#/search">
+            <svg
+               class="w-6 h-6 text-gray-800" fill="none" stroke="currentcolor"
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+         </a>
+         <button class="mobile-toggle items-center block lg:hidden" aria-label="Menu Button"> <span
+            class="bg-gray-800"></span> <span class="bg-gray-800"></span> <span
+            class="bg-gray-800"></span>
+         </button>
+         <div class="hidden lg:flex items-center">
+            <a
+               class="popup-with-form flex items-center px-6 py-3 text-base text-gray-400 hover:bg-blue-50 rounded-full hover:text-blue-800 group duration-300 ml-4 font-medium"
+               href="#/search">
+               <span class="mr-2">
+                  <svg
+                     class="w-5 h-5 text-gray-400 group-hover:text-blue-800"
+                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+               </span>
+               Search 
+            </a>
+            <a href="/subscribe"
+               class="text-base text-white font-medium bg-gradient-to-r to-blue-800 via-blue-200 from-blue-800 bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-300 py-3 px-8 rounded-full ml-4">Subscribe</a>
+         </div>
+      </div>
+   </div>
+</header>         <div class="hero-area relative pt-10 lg:pt-20 ">
+   <div class="container mx-auto">
+      <div class="hero-box-3 relative grid gap-6 grid-cols-1 lg:grid-cols-12 items-center text-center lg:text-left">
+         <div class="lg:col-span-8">
+            <div class="hero-content lg:flex flex-wrap text-center lg:text-left relative lg:pr-14">
+               <h4 class="font-serif !leading-normal text-4xl lg:text-6xl text-gray-800 font-bold  mb-2">Blog
+               </h4>
+            </div>
+         </div>
+         <div class="lg:col-span-4">
+            <div class="feature-image relative" data-aos="fade" data-aos-delay="100">
+               <img class="w-full rounded-xl" src="/content/images/2023/07/A-computer-from-the-90s-in-the-style-of-vaporwave.webp" alt="Blog">
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<section class="course-area pt-20 xl:pt-10 blog-">
+   <div class="container mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      </div>
+         </div>
+</section>
+         <footer class="footer-area relative  pt-20 xl:pt-28">
+   <div class="footer-bg bg-blue-50 absolute bottom-0 left-0 right-0 w-full block h-[calc(100%-11.4rem)]">
+   </div>
+   <div class="container mx-auto">
+      <div class=" bg-white shadow p-8 md:p-14 rounded-lg mb-8 lg:mb-12 relative z-10">
+         <div class="newsletter-cta grid gap-6 grid-cols-1 lg:grid-cols-12 items-center border-b border-blue-100 pb-8 lg:pb-12 mb-8 lg:mb-16">
+            <div class="lg:col-span-6 xl:col-span-8">
+               <h3 class="font-serif text-2xl lg:text-4xl text-gray-800 font-bold  mb-3"> Subscribe to Ocademy 📫</h3>
+               <p class="text-base leading-relaxed text-gray-400 font-normal">               Subscribe to receive latest courses, news, and updates.</p>
+            </div>
+            <div class="lg:col-span-6 xl:col-span-4">
+               <a href="/subscribe">
+   <div data-aos="fade-up" data-aos-delay="600">
+      <div class="relative">
+         <div  class="block px-6 py-4 w-full text-base text-gray-400 bg-blue-50 rounded-full border border-blue-100 focus:text-blue-800 focus:border-blue-800 placeholder-gray-600 outline-none duration-300">Enter your email </div>
+         <div  class="text-base text-white font-medium bg-gradient-to-r to-blue-800 via-blue-200 from-blue-800 bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-300 rounded-full w-full lg:w-fit relative lg:absolute top-0 right-0 bottom-0 outline-none px-8 py-4 mt-6 lg:mt-0">Subscribe</div>
+      </div>
+   </div>
+</a>            </div>
+         </div>
+         <div class="footer-list">
+            <ul class="grid gap-3 lg:gap-6 sm:grid-cols-2 lg:grid-cols-12 items-center">
+   <li class="lg:col-span-3">
+      <p class=" text-base text-gray-800 hover:text-blue-800 font-normal  "> <a class="wavy-hover"
+         href="/about/">About</a></p>
+   </li>
+   <li class="lg:col-span-3">
+      <p class=" text-base text-gray-800 hover:text-blue-800 font-normal  "> <a class="wavy-hover"
+         href="/courses/">Courses</a></p>
+   </li>
+   <li class="lg:col-span-3">
+      <p class=" text-base text-gray-800 hover:text-blue-800 font-normal  "> <a class="wavy-hover"
+         href="/blog/">Blog</a></p>
+   </li>
+   <li class="lg:col-span-3">
+      <p class=" text-base text-gray-800 hover:text-blue-800 font-normal  "> <a class="wavy-hover"
+         href="/news/">News</a></p>
+   </li>
+   <li class="lg:col-span-3">
+      <p class=" text-base text-gray-800 hover:text-blue-800 font-normal  "> <a class="wavy-hover"
+         href="/contact/">Contact</a></p>
+   </li>
+   <li class="lg:col-span-3">
+      <p class=" text-base text-gray-800 hover:text-blue-800 font-normal  "> <a class="wavy-hover"
+         href="https://github.com/ocademy-ai">GitHub</a></p>
+   </li>
+</ul>
+
+         </div>
+      </div>
+      <div
+         class="md:flex justify-between gap-6 items-center text-center lg:text-left pb-14 relative z-10">
+         <div class="my-2">
+            <p class="text-sm leading-relaxed text-gray-400 font-normal">
+               &copy; 
+               <span id="spanYear">
+                  <script> document.getElementById('spanYear').innerHTML = new Date('Y'); </script>
+               </span>
+               - Ocademy. All rights reserved
+            </p>
+         </div>
+      </div>
+      <a class="scroll-top-button fixed left-4 bottom-4 z-10 inline-flex items-center justify-center w-12 h-12 border-2 border-blue-200 bg-white hover:bg-blue-50 duration-300 rounded-full"
+         href="#">
+         <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+               d="M6 19.3326C5.82321 19.3326 5.65367 19.2624 5.52866 19.1374C5.40366 19.0124 5.33343 18.8428 5.33343 18.666L5.33343 2.94425L1.13935 7.13966C1.01418 7.26483 0.844425 7.33514 0.667415 7.33514C0.490406 7.33514 0.320646 7.26483 0.195481 7.13966C0.0703166 7.0145 4.17049e-09 6.84474 0 6.66773C-4.17049e-09 6.49072 0.0703166 6.32096 0.195481 6.1958L5.52807 0.863209C5.58998 0.801134 5.66354 0.751884 5.74452 0.718281C5.82551 0.684675 5.91232 0.667379 6 0.667379C6.08768 0.667379 6.17449 0.684675 6.25548 0.718281C6.33646 0.751884 6.41002 0.801134 6.47193 0.863209L11.8045 6.1958C11.9297 6.32096 12 6.49072 12 6.66773C12 6.84474 11.9297 7.0145 11.8045 7.13966C11.6794 7.26483 11.5096 7.33514 11.3326 7.33514C11.1556 7.33514 10.9858 7.26483 10.8607 7.13966L6.66657 2.94425L6.66657 18.666C6.66657 18.8428 6.59635 19.0124 6.47134 19.1374C6.34633 19.2624 6.17679 19.3326 6 19.3326Z"
+               fill="#585F63" />
+         </svg>
+      </a>
+   </div>
+</footer>      </div>
+      <script src="/assets/js/build.min.js?v=e87cb03414"></script>
+      
+   </body>
+</html>
