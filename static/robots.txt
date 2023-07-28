@@ -1,5 +1,5 @@
 User-agent: *
-Sitemap: http://localhost:2368/sitemap.xml
+Sitemap: https://gh-pages.d17m6ab563z8ff.amplifyapp.com//sitemap.xml
 Disallow: /ghost/
 Disallow: /p/
 Disallow: /email/
