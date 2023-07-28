@@ -56,7 +56,7 @@ jobs:
         run: ls
         
       - name: Replace URLs in static folder
-        run: find static -type f -exec sed -i 's#http://localhost:2368#https://gh-pages.d17m6ab563z8ff.amplifyapp.com/#g' {} +
+        run: find static -type f -exec sed -i 's#http://localhost:2368#https://ocademy.cc/#g' {} +
 
       - name: Push new branch to remote
         run: |
